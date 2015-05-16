@@ -1,10 +1,10 @@
 'use strict';
 
-describe('Directive: creditDashboardNavbar', function () {
+describe('Directive: creditDashboardFooter', function () {
 
   // load the directive's module and view
   beforeEach(module('creditDashboardApp'));
-  beforeEach(module('app/creditDashboardNavbar/creditDashboardNavbar.html'));
+  beforeEach(module('components/creditDashboardFooter/creditDashboardFooter.html'));
 
   var element, scope;
 
@@ -13,9 +13,9 @@ describe('Directive: creditDashboardNavbar', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<credit-dashboard-navbar></credit-dashboard-navbar>');
+    element = angular.element('<credit-dashboard-footer></credit-dashboard-footer>');
     element = $compile(element)(scope);
     scope.$apply();
-    expect(element.text()).toBe('this is the creditDashboardNavbar directive');
+    expect(element.text()).toBe('this is the creditDashboardFooter directive');
   }));
 });

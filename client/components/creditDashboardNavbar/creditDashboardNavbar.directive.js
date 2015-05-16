@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('creditDashboardApp')
-  .directive('creditDashboardNavbar', function ($location) {
+  .directive('creditDashboardNavbar', function () {
     return {
-      templateUrl: 'app/creditDashboardNavbar/creditDashboardNavbar.html',
-      restrict: 'E',
+      templateUrl: 'components/creditDashboardNavbar/creditDashboardNavbar.html',
+      restrict: 'EA',
       link: function (scope, element, attrs) {
       	scope.menu = [{
 	      'title': 'Home',
