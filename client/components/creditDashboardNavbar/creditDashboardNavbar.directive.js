@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('creditDashboardApp')
-  .directive('creditDashboardNavbar', function () {
+  .directive('creditDashboardNavbar', function ($location) {
     return {
       templateUrl: 'components/creditDashboardNavbar/creditDashboardNavbar.html',
       restrict: 'EA',
