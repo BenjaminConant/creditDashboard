@@ -6,12 +6,10 @@ angular.module('creditDashboardApp')
       templateUrl: 'app/charts/utilizationDetail/utilizationDetail.html',
       restrict: 'EA',
       scope: {
-        data: '=',
-        labels: '=',
+        rawData: '=data',
       },
       link: function (scope, element, attrs) {
-      	scope.labels = ["credit used", "credit remaining"];
-        scope.data = [60, 40];
-      }
-    };
-  });
+      }, 
+  }
+
+});

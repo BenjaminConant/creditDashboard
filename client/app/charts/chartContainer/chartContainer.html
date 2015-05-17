@@ -1,8 +1,55 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-lg-12">
-    	<utilization-detail data="detailData" labels="detailLabels"></utilization-detail>
-    	<utilization-overview data="overviewData" labels="overviewLabels" series="overviewSeries"></utilization-overview>
+    	<utilization-detail data="detail"></utilization-detail>
+    	<utilization-overview data="data"></utilization-overview>
+    </div>
+  </div>
+</div> -->
+
+<!--  <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+		<utilization-detail data="detail"></utilization-detail>
+    </div> -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
+    	<h3 class="text-center">{{detail.name}} utilization</h3>
+    	<canvas id="doughnut" legend="true" class="chart chart-doughnut" data="[detail.utilization, detail.remainingCredit]" labels='["Percent Utilization", "Percent Remaining"]' colours="['#ff2600', '#009000']" ></canvas> 
+    	<ul> 
+    		<li>Percent Utilization: <span>{{detail.utilization}}%</span></li>
+    		<li>Dollar Utilization: <span>{{detail.details.available_credit | currency }}</span></li>
+    		<li>Percent Remaining: <span>{{detail.remainingCredit}}% </span></li>
+    		<li>Dollar Remaining: <span>{{detail.details.total_balance - detail.details.available_credit | currency}}</span></li> 
+	 		<li>Total Balance: <span>{{detail.details.total_balance | currency}}</span></li>
+			<li>Number of Accounts: <span>{{detail.details.accounts }}</span></li>   
+	 	</ul>
+    </div>
+  	<div class="col-xs-9 col-sm-10 col-md-9 col-lg-9">
+  		<h3 class="text-center"> Utilization History <span> (click bars to set as detail)</span> </h3>
+		  <canvas id="bar" class="chart chart-bar" data="history.utilizationData" labels="history.labels" colours="['#ff2600', '#009000']" click="setDetail" hover="doThaThing"></canvas> 
+  		<!-- <utilization-overview data="data"></utilization-overview> -->
+  	</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    	<h3 class="text-center"> Dollar Utilization History</h3>
+    	<canvas id="line" class="chart chart-line" data="history.dollarUtilizationData" labels="history.labels" colours="['#ff2600']" click="setDetail"></canvas> 
+    </div>
+  	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    	<h3 class="text-center"> Limit History</h3>
+    	<canvas id="line" class="chart chart-line" data="history.limitData" labels='history.labels' colours="['#009000']" click="setDetail"></canvas> 
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <h3 class="text-center"> Dollar Utilization & Limit History</h3>
+      <canvas id="line" legend="true" series="['Dolar Utilization', 'Credit Limit']" class="chart chart-line" data="[history.dollarUtilizationData[0], history.limitData[0]]" labels='history.labels' colours="['#ff2600', '#009000']" click="setDetail"></canvas> 
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    	<h3 class="text-center">Account Number History</h3>
+    	<canvas id="line" class="chart chart-line" data="history.accountNumberData" labels='history.labels' colours="['#ff2600', '#009000']" click="setDetail"></canvas> 
     </div>
   </div>
 </div>
