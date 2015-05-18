@@ -6,9 +6,9 @@ To get this project up and running first clone it and then run
 
 then
 
-`bower install'
+<code>bower install</code>
 
 then 
 
-'grunt serve'
+<code>grunt serve</code>
 
