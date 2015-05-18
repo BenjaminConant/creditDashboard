@@ -9,6 +9,6 @@ angular.module('creditDashboardApp')
   		return creditDashboardData.current;
   	}, function (newVal){
   		$scope.detail = creditDashboardData.createCurrent(newVal);
-  	})
+  	});
 
   });

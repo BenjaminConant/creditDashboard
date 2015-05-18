@@ -10,6 +10,6 @@ angular.module('creditDashboardApp')
       },
       link: function (scope, element, attrs) {
       }, 
-  }
+  };
 
 });
