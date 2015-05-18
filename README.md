@@ -2,7 +2,7 @@
 
 To get this project up and running first clone it and then run
 
-`npm install'
+<code>npm install</code>
 
 then
 
