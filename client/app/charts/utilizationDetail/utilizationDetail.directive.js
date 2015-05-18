@@ -6,7 +6,7 @@ angular.module('creditDashboardApp')
       templateUrl: 'app/charts/utilizationDetail/utilizationDetail.html',
       restrict: 'EA',
       scope: {
-        rawData: '=data',
+        detail: '=detail',
       },
       link: function (scope, element, attrs) {
       }, 

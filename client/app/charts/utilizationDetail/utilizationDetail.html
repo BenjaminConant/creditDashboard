@@ -1,44 +1,12 @@
-<!-- <div class="chart-card">
-	<div class="container">
-		<h1>{{rawData.name}} Utilization</h1>
-		<canvas id="doughnut" legend="true" class="chart chart-doughnut" data="[rawData.utilization, rawData.remainingCredit]" labels="labels" colours="['#ff2600', '#009000']"></canvas> 
-		<div class="row">
-			<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 detail-print">	
-			 		<h3 class="text-center">Utilization: {{rawData.details.utilization + '%'}} </h3> 
-			 </div>
-			 <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6 detail-print">
-			 	<ul> 
-			 		<li>Remaining Credit: {{rawData.details.total_balance - rawData.details.available_credit | currency}} </li> 
-			 		<li>Total Balance: {{rawData.details.total_balance | currency}} </li> 
-			 	</ul>
-			 </div>
-			 <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6 detail-print">
-			 	<ul> 
-			 		<li>Available Credit: {{rawData.details.available_credit | currency }} </li>
-			 		<li>Number of Accounts: {{rawData.details.accounts }} </li>  
-			 	</ul>
-			 </div>
-		</div>
-	</div>	
-</div>
- -->
-
-
-		<div class="row">
-			<div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">	
-			 		<h3 class="text-center">Utilization: {{rawData.details.utilization + '%'}} </h3> 
-			 </div>
-			 <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6 detail-print">
-			 	<ul> 
-			 		<li>Remaining Credit: {{rawData.details.total_balance - rawData.details.available_credit | currency}} </li> 
-			 		<li>Total Balance: {{rawData.details.total_balance | currency}} </li> 
-			 	</ul>
-			 </div>
-			 <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6 detail-print">
-			 	<ul> 
-			 		<li>Available Credit: {{rawData.details.available_credit | currency }} </li>
-			 		<li>Number of Accounts: {{rawData.details.accounts }} </li>  
-			 	</ul>
-			 </div>
-		</div>
-
+<div>
+    <h3 class="text-center">{{detail.name}} utilization</h3>
+    <canvas id="doughnut" legend="true" class="chart chart-doughnut" data="[detail.utilization, detail.remainingCredit]" labels='["Percent Utilization", "Percent Remaining"]' colours="['#ff2600', '#009000']"></canvas>
+    <ul>
+        <li>Percent Utilization: <span>{{detail.utilization}}%</span></li>
+        <li>Dollar Utilization: <span>{{detail.details.available_credit | currency }}</span></li>
+        <li>Percent Remaining: <span>{{detail.remainingCredit}}% </span></li>
+        <li>Dollar Remaining: <span>{{detail.details.total_balance - detail.details.available_credit | currency}}</span></li>
+        <li>Total Balance: <span>{{detail.details.total_balance | currency}}</span></li>
+        <li>Number of Accounts: <span>{{detail.details.accounts }}</span></li>
+    </ul>
+<div>
