@@ -170,6 +170,7 @@ angular.module('creditDashboardApp')
         limitData: [[],[]],
         accountNumberData: [[],[]],
       };
+
       for (var key in rawData['tu.utilization']) {
           history.labels.unshift(key)
           history.utilizationData[0].unshift(Number(rawData['tu.utilization'][key]['utilization']))
@@ -185,11 +186,5 @@ angular.module('creditDashboardApp')
             createCurrent: createCurrent,
             current: 'current',
            };
-      
 
-
-
-
-
- 
-  });
+});
