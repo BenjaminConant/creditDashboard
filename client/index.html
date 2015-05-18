@@ -20,6 +20,7 @@
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
   </head>
   <body ng-app="creditDashboardApp">
     <!--[if lt IE 7]>
@@ -54,17 +55,22 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/Chart.js/Chart.js"></script>
+      <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
-          <script src="app/creditDashboardNavbar/creditDashboardNavbar.directive.js"></script>
+          <script src="app/charts/chartContainer/chartContainer.directive.js"></script>
+          <script src="app/charts/utilizationDetail/utilizationDetail.directive.js"></script>
+          <script src="app/creditDashboardData/creditDashboardData.service.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="components/creditDashboardFooter/creditDashboardFooter.directive.js"></script>
+          <script src="components/creditDashboardNavbar/creditDashboardNavbar.directive.js"></script>
           <script src="components/modal/modal.service.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>

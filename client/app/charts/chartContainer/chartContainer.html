@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+    	<utilization-detail detail="detail"></utilization-detail>
+    </div>
+  	<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+  		<h3 class="text-center">Utilization History</h3>
+		  <canvas id="bar" class="chart chart-bar" data="history.utilizationData" labels="history.labels" colours="['#ff2600', '#009000']" click="setDetail"></canvas> 
+  	</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <h3 class="text-center">Dollar Utilization History</h3>
+    	<canvas id="line" class="chart chart-line" data="history.dollarUtilizationData" labels="history.labels" colours="['#ff2600']" click="setDetail"></canvas> 
+    </div>
+  	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    	<h3 class="text-center">Limit History</h3>
+    	<canvas id="line" class="chart chart-line" data="history.limitData" labels='history.labels' colours="['#009000']" click="setDetail"></canvas> 
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <h3 class="text-center">Dollar Utilization & Limit History</h3>
+      <canvas id="line" legend="true" series="['Dolar Utilization', 'Credit Limit']" class="chart chart-line" data="[history.dollarUtilizationData[0], history.limitData[0]]" labels='history.labels' colours="['#ff2600', '#009000']" click="setDetail"></canvas> 
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    	<h3 class="text-center">Account Number History</h3>
+    	<canvas id="line" class="chart chart-line" data="history.accountNumberData" labels='history.labels' colours="['#ff2600', '#009000']" click="setDetail"></canvas> 
+    </div>
+  </div>
+</div>

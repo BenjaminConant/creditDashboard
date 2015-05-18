@@ -1,0 +1,12 @@
+<div class="util-detail">
+    <h3 class="text-center">{{detail.name}} utilization</h3>
+    <canvas id="doughnut" legend="true" class="chart chart-doughnut" data="[detail.utilization, detail.remainingCredit]" labels='["Percent Utilization", "Percent Remaining"]' colours="['#ff2600', '#009000']"></canvas>
+    <ul>
+        <li>Percent Utilization: <span>{{detail.utilization}}%</span></li>
+        <li>Dollar Utilization: <span>{{detail.details.available_credit | currency }}</span></li>
+        <li>Percent Remaining: <span>{{detail.remainingCredit}}% </span></li>
+        <li>Dollar Remaining: <span>{{detail.details.total_balance - detail.details.available_credit | currency}}</span></li>
+        <li>Total Balance: <span>{{detail.details.total_balance | currency}}</span></li>
+        <li>Number of Accounts: <span>{{detail.details.accounts }}</span></li>
+    </ul>
+<div>
